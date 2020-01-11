@@ -6,7 +6,8 @@ package com.example.ocadotest;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.example.ocadotest.domain.executor.PostExecutionThread;
+
+import com.example.domain.executor.PostExecutionThread;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

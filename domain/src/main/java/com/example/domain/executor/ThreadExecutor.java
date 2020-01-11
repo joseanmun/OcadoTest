@@ -1,4 +1,4 @@
-package com.example.ocadotest.domain.executor;
+package com.example.domain.executor;
 
 /**
  * Executor implementation can be based on different frameworks or techniques of asynchronous

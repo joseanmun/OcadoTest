@@ -4,9 +4,23 @@ import android.app.Application;
 
 import com.example.ocadotest.injector.component.ApplicationComponent;
 import com.example.ocadotest.injector.component.DaggerApplicationComponent;
+import com.example.ocadotest.injector.module.ApplicationModule;
 
 public class MyApplication extends Application {
-    // Reference to the application graph that is used across the whole app
-    ApplicationComponent appComponent = DaggerApplicationComponent.builder().build();
+    private ApplicationComponent component;
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        initializeInjector();
+    }
+
+    private void initializeInjector() {
+        component = DaggerApplicationComponent.builder().applicationModule(new ApplicationModule(this)).build();
+    }
+
+    public ApplicationComponent getComponent() {
+        return component;
+    }
 }

@@ -1,9 +1,9 @@
 /**
  * Copyright (C) 2014 android10.org. All rights reserved.
  */
-package com.example.ocadotest.data.executor;
+package com.example.data.executor;
 
-import com.example.ocadotest.domain.executor.ThreadExecutor;
+import com.example.domain.executor.ThreadExecutor;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

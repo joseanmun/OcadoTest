@@ -1,4 +1,4 @@
-package com.example.ocadotest.domain.executor;
+package com.example.domain.executor;
 
 /**
  * Thread abstraction created to change the execution context from any thread to any other thread.

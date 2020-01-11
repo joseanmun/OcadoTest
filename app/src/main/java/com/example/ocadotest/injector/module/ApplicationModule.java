@@ -3,11 +3,11 @@ package com.example.ocadotest.injector.module;
 
 import android.content.Context;
 
+import com.example.data.executor.JobExecutor;
+import com.example.domain.executor.PostExecutionThread;
+import com.example.domain.executor.ThreadExecutor;
 import com.example.ocadotest.MyApplication;
 import com.example.ocadotest.UIThread;
-import com.example.ocadotest.data.executor.JobExecutor;
-import com.example.ocadotest.domain.executor.PostExecutionThread;
-import com.example.ocadotest.domain.executor.ThreadExecutor;
 
 import javax.inject.Singleton;
 
