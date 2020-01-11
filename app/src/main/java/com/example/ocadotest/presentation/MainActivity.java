@@ -1,7 +1,9 @@
-package com.example.ocadotest;
+package com.example.ocadotest.presentation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.ocadotest.R;
 
 public class MainActivity extends AppCompatActivity {
 
