@@ -22,10 +22,7 @@ public interface GetProductsUseCase extends Interactor {
 
     /**
      * Executes this use case.
-     *
-     * @param characterId int character identifier which we want to retrieve comics from.
-     * @param refresh     boolean true if the request should be done to the cloud.
      * @param callback    A {@link GetProductsUseCase.Callback} used to notify the client.
      */
-    void execute(int characterId, boolean refresh, Callback callback);
+    void execute(Callback callback);
 }
