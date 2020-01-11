@@ -7,7 +7,7 @@ public class ItemBO {
 
     private String title;
 
-    private int size;
+    private String size;
 
     private String imageUrl;
 
@@ -38,11 +38,11 @@ public class ItemBO {
         this.title = title;
     }
 
-    public int getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

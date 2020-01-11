@@ -30,6 +30,6 @@ public interface ProductsApiService {
     /**
      * Get all products.
      */
-    @GET("characters/{characterId}/comics")
+    @GET("products")
     Call<RestProductsResponse> getProductList();
 }

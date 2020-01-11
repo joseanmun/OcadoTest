@@ -1,20 +1,17 @@
-package com.example.data.bean;
+package com.example.ocadotest.model;
 
-import com.google.gson.annotations.SerializedName;
-
-public class RestItem {
-    @SerializedName("id")
+public class ItemModel {
     private int id;
-    @SerializedName("price")
+
     private String price;
-    @SerializedName("title")
+
     private String title;
-    @SerializedName("size")
+
     private String size;
-    @SerializedName("imageUrl")
+
     private String imageUrl;
 
-    public RestItem() {
+    public ItemModel() {
     }
 
     public int getId() {

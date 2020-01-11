@@ -10,6 +10,7 @@ public class RestItemMapper {
     public static ItemBO toBo(RestItem restItem) {
         ItemBO itemBO = null;
         if (restItem != null) {
+            itemBO = new ItemBO();
             itemBO.setId(restItem.getId());
             itemBO.setImageUrl(restItem.getImageUrl());
             itemBO.setPrice(restItem.getPrice());

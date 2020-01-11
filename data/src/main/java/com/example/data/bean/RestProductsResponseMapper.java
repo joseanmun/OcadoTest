@@ -12,7 +12,7 @@ public class RestProductsResponseMapper {
 
     public static List<ProductBO> toBo(RestProductsResponse response) {
         List<ProductBO> list = new ArrayList<>();
-        if (response.getProducts() != null) {
+        if (response != null && response.getProducts() != null) {
             for (RestProduct restProduct : response.getProducts()) {
                 list.add(RestProductMapper.toBo(restProduct));
             }

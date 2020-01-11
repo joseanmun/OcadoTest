@@ -13,6 +13,7 @@ public class RestProductMapper {
     public static ProductBO toBo(RestProduct restProduct) {
         ProductBO productBO = null;
         if (restProduct != null) {
+            productBO = new ProductBO();
             productBO.setTag(restProduct.getTag());
             if (restProduct.getItems() != null) {
                 List<ItemBO> itemBOList = new ArrayList<>();
