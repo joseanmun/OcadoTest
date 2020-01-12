@@ -3,52 +3,49 @@ package com.example.ocadotest.presentation.presenter.products.impl;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.domain.bean.ProductBO;
+import com.example.domain.bean.ItemDetailBO;
 import com.example.domain.exception.ErrorBundle;
-import com.example.domain.interactor.GetProductsUseCase;
+import com.example.domain.interactor.GetItemDetailUseCase;
 import com.example.ocadotest.injector.PerActivity;
-import com.example.ocadotest.model.ProductModel;
-import com.example.ocadotest.model.ProductModelMapper;
+import com.example.ocadotest.model.ItemDetailModel;
+import com.example.ocadotest.model.ItemDetailModelMapper;
 import com.example.ocadotest.presentation.presenter.base.Presenter;
-import com.example.ocadotest.presentation.presenter.products.ProductListPresenter;
-
-import java.util.Collection;
-import java.util.List;
+import com.example.ocadotest.presentation.presenter.products.ItemDetailPresenter;
 
 import javax.inject.Inject;
 
 /**
- * {@link Presenter} that controls communication between views and models of the presentation layer.
+ * {@link Presenter} that controls communication between views and model of the presentation layer.
  */
 @PerActivity
-public class ProductListPresenterImpl implements ProductListPresenter {
+public class ItemDetailPresenterImpl implements ItemDetailPresenter {
 
-    private static final String TAG = ProductListPresenterImpl.class.getName();
+    private static final String TAG = ItemDetailPresenterImpl.class.getName();
 
-    private ProductListPresenter.View view;
+    private View view;
 
-    private final GetProductsUseCase getProductsUseCase;
+    private final GetItemDetailUseCase getItemDetailUseCase;
 
-    private List<ProductModel> models;
+    private ItemDetailModel model;
 
     @Inject
-    public ProductListPresenterImpl(GetProductsUseCase getProductsUseCase) {
-        this.getProductsUseCase = getProductsUseCase;
+    public ItemDetailPresenterImpl(GetItemDetailUseCase getProductsUseCase) {
+        this.getItemDetailUseCase = getProductsUseCase;
     }
 
     @Override
-    public void setView(@NonNull ProductListPresenter.View view) {
+    public void setView(@NonNull View view) {
         this.view = view;
     }
 
     @Override
-    public void getProducts() {
-        getProductsUseCase.execute(productListCallback);
+    public void getItemDetail(int itemId) {
+        getItemDetailUseCase.execute(itemId, callback);
     }
 
-    private void setModels() {
-        if (models != null && !models.isEmpty()) {
-            view.setItems(models);
+    private void setModel() {
+        if (model != null) {
+            view.renderItemDetail(model);
         } else {
 
         }
@@ -89,12 +86,12 @@ public class ProductListPresenterImpl implements ProductListPresenter {
 
     }
 
-    private final GetProductsUseCase.Callback productListCallback = new GetProductsUseCase.Callback() {
+    private final GetItemDetailUseCase.Callback callback = new GetItemDetailUseCase.Callback() {
 
         @Override
-        public void onProductListLoaded(Collection<ProductBO> products) {
-            models = ProductModelMapper.toModel(products);
-            setModels();
+        public void onItemDetailLoaded(ItemDetailBO itemDetailBOS) {
+            model = ItemDetailModelMapper.toModel(itemDetailBOS);
+            setModel();
             stopRefresh();
         }
 

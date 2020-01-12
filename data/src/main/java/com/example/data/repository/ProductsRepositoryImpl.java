@@ -1,7 +1,10 @@
 package com.example.data.repository;
 
+import com.example.data.bean.RestItemDetailResponse;
+import com.example.data.bean.RestItemDetailResponseMapper;
 import com.example.data.bean.RestProductsResponse;
 import com.example.data.bean.RestProductsResponseMapper;
+import com.example.data.exception.ItemDetailNotFoundException;
 import com.example.data.exception.ProductsNotFoundException;
 import com.example.data.exception.RepositoryErrorBundle;
 import com.example.data.net.ProductsApiService;
@@ -38,6 +41,26 @@ public class ProductsRepositoryImpl implements ProductsRepository {
             @Override
             public void onFailure(Call<RestProductsResponse> call, Throwable t) {
                 callback.onError(new RepositoryErrorBundle(new ProductsNotFoundException(t.getMessage())));
+            }
+        });
+    }
+
+    @Override
+    public void getItemDetail(int id, final ItemDetailCallback callback) {
+        Call<RestItemDetailResponse> call = productsApiService.getItemDetailById(id);
+        call.enqueue(new Callback<RestItemDetailResponse>() {
+            @Override
+            public void onResponse(Call<RestItemDetailResponse> call, Response<RestItemDetailResponse> response) {
+                if (response != null) {
+                    callback.onItemDetailLoaded(RestItemDetailResponseMapper.toBo(response.body()));
+                } else {
+                    callback.onError(new RepositoryErrorBundle(new ItemDetailNotFoundException()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RestItemDetailResponse> call, Throwable t) {
+                callback.onError(new RepositoryErrorBundle(new ItemDetailNotFoundException(t.getMessage())));
             }
         });
     }

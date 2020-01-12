@@ -12,7 +12,7 @@ import java.util.Collection;
 public interface GetProductsUseCase extends Interactor {
 
     /**
-     * Callback used to be notified when either a comics collection has been loaded or an error happened.
+     * Callback used to be notified when either a product collection has been loaded or an error happened.
      */
     interface Callback {
         void onProductListLoaded(Collection<ProductBO> usersCollection);

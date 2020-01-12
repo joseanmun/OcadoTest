@@ -58,11 +58,19 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param containerViewId The container view to where replace the fragment.
      * @param fragment        The fragment to be added.
      */
-    protected void replaceFragment(int containerViewId, Fragment fragment, String tag) {
+    protected void replaceFragment(int containerViewId, Fragment fragment, String tag, boolean backStack) {
         FragmentTransaction fragmentTransaction = this.getFragmentManager().beginTransaction();
+        if (backStack) {
+            fragmentTransaction.addToBackStack(tag);
+        }
         fragmentTransaction.replace(containerViewId, fragment, tag);
         fragmentTransaction.commit();
     }
+
+    protected void replaceFragment(int containerViewId, Fragment fragment, String tag) {
+        replaceFragment(containerViewId, fragment, tag, true);
+    }
+
 
     /**
      * Get the Main Application component for dependency injection.

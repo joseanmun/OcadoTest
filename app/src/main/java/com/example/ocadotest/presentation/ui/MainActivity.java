@@ -8,6 +8,7 @@ import com.example.ocadotest.injector.component.DaggerProductsComponent;
 import com.example.ocadotest.injector.module.ActivityModule;
 import com.example.ocadotest.injector.module.ProductsModule;
 import com.example.ocadotest.presentation.ui.base.BaseActivity;
+import com.example.ocadotest.presentation.ui.products.fragments.ItemDetailFragment;
 import com.example.ocadotest.presentation.ui.products.fragments.ProductListFragment;
 
 public class MainActivity extends BaseActivity implements ProductListFragment.OnProductListFragmentInteractionListener {
@@ -36,6 +37,6 @@ public class MainActivity extends BaseActivity implements ProductListFragment.On
 
     @Override
     public void onProductItemSelected(int itemId) {
-
+        replaceFragment(R.id.container, ItemDetailFragment.newInstance(itemId), ItemDetailFragment.class.getName());
     }
 }

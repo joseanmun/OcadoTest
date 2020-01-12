@@ -71,7 +71,7 @@ public class ProductListFragment extends BaseFragment implements ProductListPres
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        productListPresenter.getComics();
+        productListPresenter.getProducts();
     }
 
     @Override

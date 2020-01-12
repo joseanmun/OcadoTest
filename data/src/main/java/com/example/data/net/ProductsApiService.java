@@ -16,6 +16,7 @@
 package com.example.data.net;
 
 
+import com.example.data.bean.RestItemDetailResponse;
 import com.example.data.bean.RestProductsResponse;
 
 import retrofit2.Call;
@@ -32,4 +33,11 @@ public interface ProductsApiService {
      */
     @GET("products")
     Call<RestProductsResponse> getProductList();
+
+    /**
+     * Get all products.
+     */
+    @GET("product/{itemId}/")
+    Call<RestItemDetailResponse> getItemDetailById(@Path("itemId") int itemId);
+
 }

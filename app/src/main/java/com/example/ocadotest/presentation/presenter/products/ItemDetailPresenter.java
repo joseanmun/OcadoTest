@@ -1,18 +1,16 @@
 package com.example.ocadotest.presentation.presenter.products;
 
-import com.example.ocadotest.model.ProductModel;
+import com.example.ocadotest.model.ItemDetailModel;
 import com.example.ocadotest.presentation.presenter.base.Presenter;
 
-import java.util.List;
+public interface ItemDetailPresenter extends Presenter {
 
-public interface ProductListPresenter extends Presenter {
-
-    void getProducts();
+    void getItemDetail(int itemId);
 
     void setView(View view);
 
     interface View {
-        void setItems(List<ProductModel> productModels);
+        void renderItemDetail(ItemDetailModel itemDetailModel);
 
         void stopRefresh();
 

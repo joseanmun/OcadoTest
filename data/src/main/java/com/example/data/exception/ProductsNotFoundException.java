@@ -1,7 +1,7 @@
 package com.example.data.exception;
 
 /**
- * Exception throw by the application when any Comic from a character can be found.
+ * Exception throw by the application when any itemDetail from a product can be found.
  */
 public class ProductsNotFoundException extends Exception {
 
