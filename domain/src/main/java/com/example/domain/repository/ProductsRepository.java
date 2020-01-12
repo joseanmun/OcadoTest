@@ -11,7 +11,7 @@ public interface ProductsRepository {
      * Callback used to be notified when either a product list has been loaded or an error happened.
      */
     interface ProductListCallback {
-        void onProductListLoaded(Collection<ProductBO> comicBoCollection);
+        void onProductListLoaded(Collection<ProductBO> productBOS);
 
         void onError(ErrorBundle errorBundle);
     }

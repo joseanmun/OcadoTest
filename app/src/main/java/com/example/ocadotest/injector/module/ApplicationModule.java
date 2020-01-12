@@ -51,7 +51,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    ProductsRepository provideComicsRepository(ProductsRepositoryImpl productsRepository) {
+    ProductsRepository provideProductsRepository(ProductsRepositoryImpl productsRepository) {
         return productsRepository;
     }
 

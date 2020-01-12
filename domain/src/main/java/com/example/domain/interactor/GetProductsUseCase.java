@@ -7,7 +7,7 @@ import com.example.domain.exception.ErrorBundle;
 import java.util.Collection;
 
 /**
- * Get comics by character identifier use case.
+ * Get products
  */
 public interface GetProductsUseCase extends Interactor {
 

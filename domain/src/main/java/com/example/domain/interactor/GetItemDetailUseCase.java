@@ -5,7 +5,7 @@ import com.example.domain.bean.ItemDetailBO;
 import com.example.domain.exception.ErrorBundle;
 
 /**
- * Get comics by character identifier use case.
+ * Get itemDetail by item identifier use case.
  */
 public interface GetItemDetailUseCase extends Interactor {
 

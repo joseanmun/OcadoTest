@@ -24,7 +24,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 /**
- * Interface representing the comic API service.
+ * Interface representing the products API service.
  */
 public interface ProductsApiService {
 
