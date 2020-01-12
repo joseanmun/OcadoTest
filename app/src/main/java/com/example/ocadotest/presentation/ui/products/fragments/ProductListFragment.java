@@ -3,12 +3,12 @@ package com.example.ocadotest.presentation.ui.products.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.ocadotest.R;
 import com.example.ocadotest.injector.component.DaggerProductsComponent;
@@ -124,7 +124,15 @@ public class ProductListFragment extends BaseFragment implements ProductListPres
 
     @Override
     public void showMessage(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        Snackbar snackbar = Snackbar
+                .make(getActivity().findViewById(R.id.container), getString(R.string.common_error_message), Snackbar.LENGTH_INDEFINITE)
+                .setAction(getString(R.string.common_error_retry), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        productListPresenter.getProducts();
+                    }
+                });
+        snackbar.show();
     }
 
 

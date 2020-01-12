@@ -6,4 +6,6 @@
     <string name="fragment_product_title">Products</string>
     <string name="fragment_item_detail_title">Product detail</string>
     <string name="price_format">%1s€</string>
+    <string name="common_error_retry">Try again</string>
+    <string name="common_error_message">Something went wrong</string>
 </resources>
