@@ -4,7 +4,7 @@ import com.example.domain.executor.PostExecutionThread;
 import com.example.domain.executor.ThreadExecutor;
 import com.example.domain.repository.ProductsRepository;
 import com.example.ocadotest.injector.module.ApplicationModule;
-import com.example.ocadotest.presentation.BaseActivity;
+import com.example.ocadotest.presentation.ui.base.BaseActivity;
 
 import javax.inject.Singleton;
 

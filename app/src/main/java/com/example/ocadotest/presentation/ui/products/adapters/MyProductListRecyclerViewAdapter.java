@@ -1,4 +1,4 @@
-package com.example.ocadotest.presentation;
+package com.example.ocadotest.presentation.ui.products.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.ocadotest.R;
 import com.example.ocadotest.model.ItemModel;
 import com.example.ocadotest.model.ProductModel;
+import com.example.ocadotest.presentation.ui.products.fragments.ProductListFragment;
 
 import java.util.List;
 

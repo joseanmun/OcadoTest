@@ -1,4 +1,4 @@
-package com.example.ocadotest.presenter;
+package com.example.ocadotest.presentation.presenter.products.impl;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -9,7 +9,8 @@ import com.example.domain.interactor.GetProductsUseCase;
 import com.example.ocadotest.injector.PerActivity;
 import com.example.ocadotest.model.ProductModel;
 import com.example.ocadotest.model.ProductModelMapper;
-import com.example.ocadotest.presentation.MainActivity;
+import com.example.ocadotest.presentation.presenter.base.Presenter;
+import com.example.ocadotest.presentation.presenter.products.ProductListPresenter;
 
 import java.util.Collection;
 import java.util.List;

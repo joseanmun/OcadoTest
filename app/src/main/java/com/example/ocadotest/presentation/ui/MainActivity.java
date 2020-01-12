@@ -1,4 +1,4 @@
-package com.example.ocadotest.presentation;
+package com.example.ocadotest.presentation.ui;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import com.example.ocadotest.injector.component.ApplicationComponent;
 import com.example.ocadotest.injector.component.DaggerProductsComponent;
 import com.example.ocadotest.injector.module.ActivityModule;
 import com.example.ocadotest.injector.module.ProductsModule;
+import com.example.ocadotest.presentation.ui.base.BaseActivity;
+import com.example.ocadotest.presentation.ui.products.fragments.ProductListFragment;
 
 public class MainActivity extends BaseActivity implements ProductListFragment.OnProductListFragmentInteractionListener {
 

@@ -21,6 +21,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context=".presentation.ProductListFragment"
+        tools:context=".presentation.ui.products.fragments.ProductListFragment"
         tools:listitem="@layout/fragment_productlist_itemlist" />
 </LinearLayout>

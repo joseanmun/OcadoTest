@@ -1,4 +1,4 @@
-package com.example.ocadotest.presentation;
+package com.example.ocadotest.presentation.ui.base;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;

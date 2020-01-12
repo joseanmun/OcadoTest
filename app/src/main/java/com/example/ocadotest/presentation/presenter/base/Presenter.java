@@ -1,4 +1,4 @@
-package com.example.ocadotest.presenter;
+package com.example.ocadotest.presentation.presenter.base;
 
 /**
  * Interface representing a Presenter in a model view presenter (MVP) pattern.

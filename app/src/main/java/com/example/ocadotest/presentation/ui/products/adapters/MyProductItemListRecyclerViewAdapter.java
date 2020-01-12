@@ -1,4 +1,4 @@
-package com.example.ocadotest.presentation;
+package com.example.ocadotest.presentation.ui.products.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.example.ocadotest.R;
 import com.example.ocadotest.model.ItemModel;
-import com.example.ocadotest.presentation.ProductListFragment.OnProductListFragmentInteractionListener;
+import com.example.ocadotest.presentation.ui.products.fragments.ProductListFragment.OnProductListFragmentInteractionListener;
 
 import java.util.List;
 

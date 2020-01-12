@@ -4,8 +4,8 @@ package com.example.ocadotest.injector.component;
 import com.example.ocadotest.injector.PerActivity;
 import com.example.ocadotest.injector.module.ActivityModule;
 import com.example.ocadotest.injector.module.ProductsModule;
-import com.example.ocadotest.presentation.MainActivity;
-import com.example.ocadotest.presentation.ProductListFragment;
+import com.example.ocadotest.presentation.ui.MainActivity;
+import com.example.ocadotest.presentation.ui.products.fragments.ProductListFragment;
 
 import dagger.Component;
 

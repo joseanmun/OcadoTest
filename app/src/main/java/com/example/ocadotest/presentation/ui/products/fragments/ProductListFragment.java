@@ -1,4 +1,4 @@
-package com.example.ocadotest.presentation;
+package com.example.ocadotest.presentation.ui.products.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,7 +14,10 @@ import com.example.ocadotest.injector.component.DaggerProductsComponent;
 import com.example.ocadotest.injector.module.ActivityModule;
 import com.example.ocadotest.injector.module.ProductsModule;
 import com.example.ocadotest.model.ProductModel;
-import com.example.ocadotest.presenter.ProductListPresenter;
+import com.example.ocadotest.presentation.presenter.products.ProductListPresenter;
+import com.example.ocadotest.presentation.ui.base.BaseActivity;
+import com.example.ocadotest.presentation.ui.base.BaseFragment;
+import com.example.ocadotest.presentation.ui.products.adapters.MyProductListRecyclerViewAdapter;
 
 import java.util.List;
 
@@ -53,7 +56,7 @@ public class ProductListFragment extends BaseFragment implements ProductListPres
     }
 
     @Override
-    void initializePresenter() {
+    public void initializePresenter() {
         BaseActivity activity = (BaseActivity) getActivity();
 
         DaggerProductsComponent.builder()

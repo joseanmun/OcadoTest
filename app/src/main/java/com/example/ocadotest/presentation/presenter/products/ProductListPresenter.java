@@ -1,6 +1,7 @@
-package com.example.ocadotest.presenter;
+package com.example.ocadotest.presentation.presenter.products;
 
 import com.example.ocadotest.model.ProductModel;
+import com.example.ocadotest.presentation.presenter.base.Presenter;
 
 import java.util.List;
 
