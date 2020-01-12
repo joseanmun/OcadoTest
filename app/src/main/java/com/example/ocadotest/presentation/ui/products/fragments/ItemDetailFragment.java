@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.example.ocadotest.model.ItemDetailModel;
 import com.example.ocadotest.presentation.presenter.products.ItemDetailPresenter;
 import com.example.ocadotest.presentation.ui.base.BaseActivity;
 import com.example.ocadotest.presentation.ui.base.BaseFragment;
+import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
 
@@ -42,6 +44,14 @@ public class ItemDetailFragment extends BaseFragment implements ItemDetailPresen
 
     @BindView(R.id.description_tv)
     TextView descriptionTv;
+    @BindView(R.id.item_title)
+    TextView mItemTitleTv;
+    @BindView(R.id.item_allergies)
+    TextView mItemAllergiestv;
+    @BindView(R.id.item_price)
+    TextView mItemPrice;
+    @BindView((R.id.product_iv))
+    ImageView mItemIv;
 
     public ItemDetailFragment() {
         // Required empty public constructor
@@ -100,7 +110,12 @@ public class ItemDetailFragment extends BaseFragment implements ItemDetailPresen
 
     @Override
     public void renderItemDetail(ItemDetailModel itemDetailModel) {
+        Picasso.with(getActivity()).load(itemDetailModel.getImageUrl()).error(R.drawable.ic_error_brown_50_24dp)
+                .fit().centerCrop().into(mItemIv);
+        mItemTitleTv.setText(itemDetailModel.getTitle());
         descriptionTv.setText(itemDetailModel.getDescription());
+        mItemAllergiestv.setText(itemDetailModel.getAllergyInformation());
+        mItemPrice.setText(getString(R.string.price_format, itemDetailModel.getPrice()));
     }
 
     @Override
