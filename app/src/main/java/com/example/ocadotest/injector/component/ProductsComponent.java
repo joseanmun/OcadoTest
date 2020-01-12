@@ -5,6 +5,7 @@ import com.example.ocadotest.injector.PerActivity;
 import com.example.ocadotest.injector.module.ActivityModule;
 import com.example.ocadotest.injector.module.ProductsModule;
 import com.example.ocadotest.presentation.MainActivity;
+import com.example.ocadotest.presentation.ProductListFragment;
 
 import dagger.Component;
 
@@ -18,5 +19,5 @@ public interface ProductsComponent extends ActivityComponent {
     // injections
     void inject(MainActivity mainActivity);
 
-    //void inject(ComicDetailFragment comicDetailFragment);
+    void inject(ProductListFragment comicDetailFragment);
 }

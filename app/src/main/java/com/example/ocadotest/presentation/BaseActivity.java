@@ -11,6 +11,9 @@ import com.example.ocadotest.MyApplication;
 import com.example.ocadotest.R;
 import com.example.ocadotest.injector.component.ApplicationComponent;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 /**
  * Base {@link android.app.Activity} class for every Activity in this application.
@@ -18,13 +21,13 @@ import com.example.ocadotest.injector.component.ApplicationComponent;
 public abstract class BaseActivity extends AppCompatActivity {
 
     @Nullable
-    //@Bind(R.id.toolbar)
-            Toolbar toolbar;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ButterKnife.bind(this);
         initializeInjector(getApplicationComponent());
     }
 
@@ -66,7 +69,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @return {@link ApplicationComponent}
      */
-    private ApplicationComponent getApplicationComponent() {
+    public ApplicationComponent getApplicationComponent() {
         return ((MyApplication) getApplication()).getComponent();
     }
 
