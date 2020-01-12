@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.ocadotest.R;
 import com.example.ocadotest.injector.component.DaggerProductsComponent;
@@ -37,6 +38,8 @@ public class ProductListFragment extends BaseFragment implements ProductListPres
 
     @BindView(R.id.products_rv)
     RecyclerView recyclerView;
+    @BindView(R.id.common_progress_bar)
+    View progressBarView;
 
     @Inject
     ProductListPresenter productListPresenter;
@@ -71,6 +74,7 @@ public class ProductListFragment extends BaseFragment implements ProductListPres
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((BaseActivity) getActivity()).setToolbarTittle(getString(R.string.fragment_product_title), false);
         productListPresenter.getProducts();
     }
 
@@ -108,13 +112,19 @@ public class ProductListFragment extends BaseFragment implements ProductListPres
     }
 
     @Override
-    public void stopRefresh() {
-
+    public void showProgress() {
+        progressBarView.setVisibility(View.VISIBLE);
     }
 
     @Override
-    public void showMessage(String message) {
+    public void hideProgress() {
+        progressBarView.setVisibility(View.GONE);
+    }
 
+
+    @Override
+    public void showMessage(String message) {
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
 

@@ -43,6 +43,7 @@ public class ProductListPresenterImpl implements ProductListPresenter {
 
     @Override
     public void getProducts() {
+        view.showProgress();
         getProductsUseCase.execute(productListCallback);
     }
 
@@ -55,7 +56,7 @@ public class ProductListPresenterImpl implements ProductListPresenter {
     }
 
     private void stopRefresh() {
-        view.stopRefresh();
+        view.hideProgress();
     }
 
     private void showMessage(String message) {

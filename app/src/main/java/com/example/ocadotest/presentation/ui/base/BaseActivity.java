@@ -3,15 +3,12 @@ package com.example.ocadotest.presentation.ui.base;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.example.ocadotest.MyApplication;
-import com.example.ocadotest.R;
 import com.example.ocadotest.injector.component.ApplicationComponent;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -20,10 +17,6 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    @Nullable
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +24,25 @@ public abstract class BaseActivity extends AppCompatActivity {
         initializeInjector(getApplicationComponent());
     }
 
-    protected void setUpToolbar(boolean showUpButton) {
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-            if (getSupportActionBar() != null) {
-                getSupportActionBar().setDisplayHomeAsUpEnabled(showUpButton);
-            }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
         }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    public void setToolbarTittle(String tittle, boolean showBack) {
+        supportInvalidateOptionsMenu();
+        this.getSupportActionBar().setTitle(tittle);
+        showBackToolbar(showBack);
+    }
+
+    private void showBackToolbar(boolean show) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(show);
     }
 
     /**

@@ -40,6 +40,7 @@ public class ItemDetailPresenterImpl implements ItemDetailPresenter {
 
     @Override
     public void getItemDetail(int itemId) {
+        view.showProgress();
         getItemDetailUseCase.execute(itemId, callback);
     }
 
@@ -52,7 +53,7 @@ public class ItemDetailPresenterImpl implements ItemDetailPresenter {
     }
 
     private void stopRefresh() {
-        view.stopRefresh();
+        view.hideProgress();
     }
 
     private void showMessage(String message) {

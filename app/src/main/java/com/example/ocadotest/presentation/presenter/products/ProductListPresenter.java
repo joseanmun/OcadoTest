@@ -14,7 +14,9 @@ public interface ProductListPresenter extends Presenter {
     interface View {
         void setItems(List<ProductModel> productModels);
 
-        void stopRefresh();
+        void showProgress();
+
+        void hideProgress();
 
         void showMessage(String message);
     }

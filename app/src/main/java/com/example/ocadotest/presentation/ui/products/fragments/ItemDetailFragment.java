@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ocadotest.R;
 import com.example.ocadotest.injector.component.DaggerProductsComponent;
@@ -35,6 +36,9 @@ public class ItemDetailFragment extends BaseFragment implements ItemDetailPresen
 
     @Inject
     ItemDetailPresenter itemDetailPresenter;
+
+    @BindView(R.id.common_progress_bar)
+    View progressBarView;
 
     @BindView(R.id.description_tv)
     TextView descriptionTv;
@@ -90,6 +94,7 @@ public class ItemDetailFragment extends BaseFragment implements ItemDetailPresen
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((BaseActivity) getActivity()).setToolbarTittle(getString(R.string.fragment_item_detail_title), true);
         itemDetailPresenter.getItemDetail(mItemId);
     }
 
@@ -99,12 +104,18 @@ public class ItemDetailFragment extends BaseFragment implements ItemDetailPresen
     }
 
     @Override
-    public void stopRefresh() {
-
+    public void showProgress() {
+        progressBarView.setVisibility(View.VISIBLE);
     }
 
     @Override
-    public void showMessage(String message) {
+    public void hideProgress() {
+        progressBarView.setVisibility(View.GONE);
+    }
 
+
+    @Override
+    public void showMessage(String message) {
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }

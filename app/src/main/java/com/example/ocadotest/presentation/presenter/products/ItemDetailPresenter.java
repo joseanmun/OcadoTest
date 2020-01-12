@@ -12,7 +12,9 @@ public interface ItemDetailPresenter extends Presenter {
     interface View {
         void renderItemDetail(ItemDetailModel itemDetailModel);
 
-        void stopRefresh();
+        void showProgress();
+
+        void hideProgress();
 
         void showMessage(String message);
     }
