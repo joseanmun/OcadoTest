@@ -1,3 +1,11 @@
+/*
+ * Created by Anselmo Jose Munoz Medina on 1/13/20 1:03 PM
+ * Email: Joseanmun@gmail.com
+ *
+ * Copyright (c) 2020 . All rights reserved.
+ * Last modified 1/11/20 8:40 PM
+ */
+
 package com.example.data;
 
 import android.content.Context;
@@ -7,7 +15,7 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Instrumented test, which will execute on an Android device.

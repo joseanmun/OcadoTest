@@ -1,5 +1,9 @@
-/**
- * Copyright (C) 2014 android10.org. All rights reserved.
+/*
+ * Created by Anselmo Jose Munoz Medina on 1/13/20 1:03 PM
+ * Email: Joseanmun@gmail.com
+ *
+ * Copyright (c) 2020 . All rights reserved.
+ * Last modified 1/11/20 8:47 PM
  */
 package com.example.data.executor;
 
